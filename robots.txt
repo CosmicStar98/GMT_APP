@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /cache/
+Disallow: /core/
+Disallow: /js/
+Disallow: /pages/
+Disallow: /plugins/
+Disallow: /styles/
+Disallow: /apps/
+Disallow: /docs/
+Crawl-Delay: 120
+
+User-agent: BaiduMobaider 
+Disallow: /
+
+User-agent: BaiduImagespider 
+Disallow: /
+
+User-agent: Baiduspider 
+Disallow: /

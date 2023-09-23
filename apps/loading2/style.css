@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+ 
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0
+ }
+ 
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block}
+ 
+body {line-height: 1}
+ 
+ol,ul {list-style: none}
+ 
+blockquote,q {quotes: none}
+ 
+blockquote:before,blockquote:after,q:before,q:after {content: none}
+ 
+table {border-collapse: collapse;border-spacing:0}
+ 
+html,body {
+	overflow: hidden;
+	height: 100%;
+	background: #242f3a;
+	background: -moz-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,#242f3a),color-stop(100%,#161616));
+	background: -webkit-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -o-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -ms-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: radial-gradient(ellipse at center,#242f3a 0%,#161616 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#242f3a',endColorstr='#161616',GradientType=1);
+ }
+ 
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+ }
+ 
+.clearfix {display: inline-block;}
+ 
+* html .clearfix {height: 1%;}
+ 
+.clearfix {display: block;}
+ 
+#content {
+	width: 100%;
+	height: 100%;
+	font-family: 'Oswald',sans-serif;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	overflow: hidden;
+	background: #242f3a;
+	background: -moz-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,#242f3a),color-stop(100%,#161616));
+	background: -webkit-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -o-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: -ms-radial-gradient(center,ellipse cover,#242f3a 0%,#161616 100%);
+	background: radial-gradient(ellipse at center,#242f3a 0%,#161616 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#242f3a',endColorstr='#161616',GradientType=1);
+ }
+ 
+#container {width: 620px;}
+ 
+#loading {
+	width: 100%;
+	height: 140px;
+	color: #EEE;
+	position: relative;
+ }
+ 
+	#loading logo {
+		width: 620px;
+		height: 110px;
+		top: 20px;
+		position: absolute;
+		display: block;
+
+		text-align: center;
+	 }
+ 
+	#loading subtitle {
+		font-size: 22pt;
+		left: 118px;
+		position: absolute;
+		display: block;
+	 }
+ 
+	#loading #spinner {
+		left: 272px;
+		width: 32px;
+		height: 32px;
+		position: absolute;
+		display: block;
+	 }
+ 
+#infobox,#tipbox,#loadingplayers {
+	background-color: rgba(0,21,38,.75);
+    width: 100%;
+    height: auto;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.22);
+    outline: 1px solid #000;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,.2);
+}
+
+.ballrace {
+	background-color: hsl(25deg 60% 16% / 75%)!important;
+	background-image: none!important;
+}
+
+.pvpbattle {
+	background-color: hsl(5deg 100% 15% / 75%)!important;
+	background-image: none!important;
+}
+
+.ultimatechimerahunt {
+	background-color: hsl(330deg 60% 25% / 75%)!important;
+	background-image: none!important;
+}
+
+.zombiemassacre {
+	background-color: hsl(0deg 100% 5% / 75%)!important;
+	background-image: none!important;
+}
+
+.virus {
+	background-color: hsl(120deg 70% 7% / 75%)!important;
+	background-image: none!important;
+}
+
+.sourcekarts {
+	background-color: hsla(207deg 100% 7% / 75%)!important;
+	background-image: none!important;
+}
+
+.minigolf {
+	background-color: hsl(120deg 70% 12% / 75%)!important;
+	background-image: none!important;
+}
+ 
+#tipbox {visibility: hidden;}
+ 
+	#tipbox .padding,#infobox .padding {padding: 8px;}
+ 
+	#tipbox .title {border-bottom: 1px solid rgba(0,0,0,0.33);}
+ 
+#title {
+	width: 100%;
+	height: auto;
+	font-size: 24pt;
+	border-bottom: 1px solid rgba(0,0,0,0.33);
+ }
+ 
+	#title:after {
+		content: "";
+		background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.11) 11%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0.11) 88%,rgba(255,255,255,0) 100%);
+		height: 1px;
+		display: block;
+	 }
+ 
+#info {
+	width: 100%;
+	height: auto;
+	font-size: 18pt;
+	line-height: 21pt;
+	border-bottom: 1px solid rgba(0,0,0,0.33);
+ }
+ 
+	#info:after {
+		content: "";
+		background: -webkit-linear-gradient(left,rgba(255,255,255,0) 0%,rgba(255,255,255,0.11) 11%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0.11) 88%,rgba(255,255,255,0) 100%);
+		height: 1px;
+		display: block;
+	 }
+ 
+#player {
+	width: 100%;
+	height: 100px;
+	color: white;
+	position: relative;
+ }
+ 
+	#player avatar {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		display: block;
+	 }
+ 
+	#player name {
+		font-size: 24pt;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 1.4em;
+		max-width: 285px;
+		position: absolute;
+		left: 110px;
+		top: 15px;
+		display: block;
+	 }
+ 
+		#player name.vip {
+			background-image: url('img/vip.png');
+			background-repeat: no-repeat;
+			background-position: center right;
+			padding-right: 30px;
+		 }
+ 
+	#player gmc {
+		font-size: 15pt;
+		position: absolute;
+		left: 110px;
+		top: 58px;
+		background-image: url('img/gmc.png');
+		background-repeat: no-repeat;
+		background-position: center left;
+		padding-left: 18px;
+		display: block;
+	 }
+ 
+	#player #details {
+		width: 200px;
+		height: auto;
+		position: absolute;
+		top: 8px;
+		left: 440px;
+		display: block;
+	 }
+ 
+	#player .title,#tipbox title {
+		color: #DDD;
+		font-size: 10pt;
+		font-style: bold;
+		padding-bottom: 4px;
+		display: block;
+		text-transform: uppercase;
+	 }
+ 
+	#player .subtitle,#tipbox subtitle {
+		font-size: 15pt;
+		padding-bottom: 8px;
+		display: block;
+	 }
+ 
+#tipbox subtitle {padding-bottom: 0px;}
+
+#loadingplayers .head {
+	color: #DDD;
+    font-size: 12pt;
+    display: block;
+    text-transform: uppercase;
+	text-align: center;
+
+	margin-left: 4px;
+	margin-right: 4px;
+
+	padding-top: 4px;
+	padding-bottom: 4px;
+
+	border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+#loadingplayers .players {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 18px;
+	row-gap: 10px;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	padding-bottom: 4px;
+
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+#loadingplayers .players .player {
+	display: grid;
+	width: fit-content;
+	font-family: 'Arial', sans-serif;
+	font-size: 12px;
+
+	position:relative;
+
+	width: 64px;
+}
+
+#loadingplayers .players .player span {
+	margin-top: 8px;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+#loadingplayers .players .player:after {
+	position: absolute;
+	content: "";
+	width: 74px;
+	height: 74px;
+	top: -4px;
+	left: -4px;
+	background: url("img/border_blue.png") no-repeat;
+
+	pointer-events: none;
+}

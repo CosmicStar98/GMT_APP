@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Theater - Video Search</title>
+	<link rel="shortcut icon" href="../../../favicon.ico">
+	<meta name="description" content="GMT theater video search page.">
+	<meta name="keywords" content="garrysmod,theater,video,search,youtube,vimeo,twitch,livestream,blip,reddit">
+	<meta name="author" content="pixelTail Games">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<nav>
+		<ul>
+			<li><a href="./search.html" class="active">Search</a></li>
+			<li><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=118824086">Workshop</a></li>
+			<li><a href="http://steamcommunity.com/workshop/filedetails/discussion/118824086/828935672624191282/">Help</a></li>
+		</ul>
+	</nav>
+
+	<div style="position:absolute;top:24px;left:0;right:0;bottom:0;">
+		<section id="content-container">
+
+			<h1>Share a video from one of the selected services</h1>
+
+			<div style="text-align:center;font-size:0;">
+
+				<service style="background-image:url(logos/youtube.png);" onclick="selectService('YouTube','http://www.youtube.com/');" onmouseover="hoverService();">-</service>
+				
+				<service style="background-image:url(logos/vimeo.svg);background-size:90%;" onclick="selectService('Vimeo','http://www.vimeo.com/');" onmouseover="hoverService();">-</service>
+
+				<service style="background-image:url(logos/twitch.png);" onclick="selectService('Twitch','http://www.twitch.tv/');" onmouseover="hoverService();">-</service>
+
+				<service style="background-image:url(logos/livestream.png);" onclick="selectService('Livestream','http://www.livestream.com/guide/livetv');" onmouseover="hoverService();">-</service>
+
+				<br />
+
+				<service style="background-image:url(logos/blip.png);" onclick="selectService('Blip','http://www.blip.tv/');" onmouseover="hoverService();">-</service>
+
+				<service class="subtext" style="background-image:url(logos/reddit.png);" onclick="selectService('Reddit/videos','http://www.reddit.com/r/videos/');" onmouseover="hoverService();">Videos</service>
+
+				<service class="subtext" style="background-image:url(logos/reddit.png);" onclick="selectService('Reddit/fullmoviesonyoutube','http://www.reddit.com/r/fullmoviesonyoutube/');" onmouseover="hoverService();">FullMoviesOnYouTube</service>
+
+			</div>
+
+			<div id="tip" class="notice"></div>
+
+		</section>
+	</div>
+
+	<script type="text/javascript">
+	// Event called when a service is hovered
+	function hoverService() {
+		console.log( "RUNLUA: surface.PlaySound('garrysmod/ui_hover.wav');" );
+	}
+
+	// Event called when a service is selected
+	function selectService(name, url) {
+		console.log( "RUNLUA: surface.PlaySound('garrysmod/ui_click.wav');" );
+
+		ga('send', 'event', 'services', 'visit', name);
+		setTimeout(function(){
+			window.location.href = url;
+		}, 100);
+	}
+
+	// Set a random tip on DOM load
+	document.addEventListener('DOMContentLoaded', function() {
+		var tips = [
+			''
+		];
+
+		return function() {
+			var node = document.getElementById('tip'),
+				tip = tips[Math.floor(Math.random() * tips.length)];
+
+			node.innerHTML = tip;
+		};
+	}());
+	</script>
+
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+
+</body>
+</html>

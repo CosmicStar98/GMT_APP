@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMTower :: Arcade</title>
+	<link rel="shortcut icon" href="../../favicon.ico">
+
+    <script src="ruffle/ruffle.js"></script>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams( window.location.search );
+
+        let game = (urlParams.get( "game" ) || "a_phoenix_reborn").toLowerCase();
+		if (!game) {game = "a_phoenix_reborn"};
+
+        const validgames = [
+            "a_phoenix_reborn", // not found
+
+            "alien_hominid",
+            "dinorun",
+            "doom",
+            "flow",
+            "gogohappysmile",
+            "heavyweapons",
+            "meatboy",
+            "metalslug",
+            "mirrorsedge2d",
+            "morezombies",
+            "morningstar",
+            "neverendinglight",
+            "ngame",
+            "patapon",
+            "paws",
+            "portal",
+            "shift",
+            "spritesmash",
+            "superkaroshi",
+            "supermario63",
+            "the_fancy_pants_adventures",
+            "thegame",
+            "thelaststand",
+            "voxpopuli",
+            "vvvvvv",
+			"hw/Happy-Wheels",
+        ];
+
+        if ( !validgames.includes( game ) ) {
+            game = validgames[0];
+        }
+
+        window.RufflePlayer = window.RufflePlayer || {};
+
+        window.RufflePlayer.config = {
+            "autoplay": "on",
+            "warnOnUnsupportedContent": false,
+            "splashScreen": false,
+            "unmuteOverlay": "hidden",
+            "backgroundColor": "#00000",
+            "letterbox": "on",
+            "contextMenu": false,
+            "logLevel": "error",
+        };
+
+        const ruffle = window.RufflePlayer.newest();
+        const flashplayer = ruffle.createPlayer();
+        document.body.appendChild(flashplayer);
+
+        flashplayer.load( {
+            url: "flash/" + game + ".swf",
+            allowScriptAccess: false,
+        } )
+
+        window.SetPlayerVolume = function( vol ) {
+            flashplayer.volume = vol
+        }
+
+        window.SetPlayerVolume( .25 )
+    </script>
+    <style>
+        body {
+            background-color: black;
+        }
+        ruffle-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</body>
+</html>
