@@ -17,44 +17,10 @@
         height: 100%;
     }
     </style>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/Vendicated/Vencord/refs/heads/main/src/plugins/youtubeAdblock.desktop/adguard.js" />
 </head>
 <body>
     <div id="player"></div>
-    <script>
-    	// YOUTUBE EMBED ADBLOCK
-    	// FUCK YOUTUBE!!!!! :D
-    	let adguardScript = null;
-    	function checkForYouTubeEmbeds() {
-    		const iframes = document.querySelectorAll('iframe');
-    		let foundYouTube = false;
-    
-    		iframes.forEach(iframe => {
-    			// Check if the iframe src contains "youtube.com" or "youtu.be"
-    			if (iframe.src.includes('youtube.com') || iframe.src.includes('youtu.be')) {
-    				foundYouTube = true;
-    			}
-    		});
-    
-    		// If YouTube embed is found, load the script from the local path
-    		if (foundYouTube) {
-    			// If the script element already exists, remove it to reload
-    			if (adguardScript) {
-    				adguardScript.parentNode.removeChild(adguardScript);
-    			}
-    			
-    			// Create a new script element
-    			adguardScript = document.createElement('script');
-    			adguardScript.src = `https://raw.githubusercontent.com/Vendicated/Vencord/refs/heads/main/src/plugins/youtubeAdblock.desktop/adguard.js`;
-    			adguardScript.async = true; // Load script asynchronously
-    			document.head.appendChild(adguardScript);
-    		}
-    	}
-    
-    	// Wait for the DOM to be fully loaded
-    	document.addEventListener('DOMContentLoaded', () => {
-    		checkForYouTubeEmbeds();
-    	});
-    </script>
     <script>
     function getQueryParams(qs) {
         qs = qs.split('+').join(' ');
